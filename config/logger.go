@@ -42,7 +42,7 @@ func (l *Logger) Warn(v ...interface{}) {
 }
 
 func (l *Logger) Error(v ...interface{}) {
-	l.error.Print(v...)
+	l.error.Println(v...)
 }
 
 // Format Enabled Logs
