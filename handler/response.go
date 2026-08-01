@@ -15,7 +15,7 @@ func sendError(ctx *gin.Context, code int, message string) {
 	})
 }
 
-func sendSucesso(ctx *gin.Context, operation string, data interface{}) {
+func sendSucess(ctx *gin.Context, operation string, data interface{}) {
 	ctx.Header("Content-Type", "application/json")
 	ctx.JSON(http.StatusOK, gin.H{
 		"message": fmt.Sprintf("operation from handler: %s sucessful", operation),
