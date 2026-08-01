@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/PataroLucas/api-vagas/schemas"
 	"github.com/gin-gonic/gin"
 )
 
@@ -21,4 +22,14 @@ func sendSucess(ctx *gin.Context, operation string, data interface{}) {
 		"message": fmt.Sprintf("operation from handler: %s sucessful", operation),
 		"data":    data,
 	})
+}
+
+type ErrorResponse struct {
+	Message   string `json:"message"`
+	ErrorCode string `json:"errorCode"`
+}
+
+type CreateOpeningResponse struct {
+	Message string                  `json:"message"`
+	Data    schemas.OpeningResponse `json:"data"`
 }
